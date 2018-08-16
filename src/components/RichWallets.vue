@@ -52,7 +52,7 @@ export default {
   methods: {
   },
   mounted () {
-    window.fetch('https://ledger.exposed/api/wallet-toplist/' + this.take + '/' + this.skip).then((r) => {
+    window.fetch('http://localhost:4000/api/wallet-toplist/' + this.take + '/' + this.skip).then((r) => {
       return r.json()
     }).then((r) => {
       this.data = r

@@ -40,9 +40,9 @@
         <small>If you want to analyze the data yourself: every ~15 minutes the entire ledger export is saved for you to download 🎉</small>
         <br />
         <small>
-          Accounts (250~400MB): <a href="https://ledger.exposed/download/latest_account_data.csv">CSV</a> / <a href="https://ledger.exposed/download/latest_account_data.json">JSON</a>
+          Accounts (250~400MB): <a href="http://localhost:4000/download/latest_account_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_account_data.json">JSON</a>
           &dash;
-          Escrows (&lt;1MB): <a href="https://ledger.exposed/download/latest_escrow_data.csv">CSV</a> / <a href="https://ledger.exposed/download/latest_escrow_data.json">JSON</a>
+          Escrows (&lt;1MB): <a href="http://localhost:4000/download/latest_escrow_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_escrow_data.json">JSON</a>
         </small>
       </div>
       <div class="text-center donate">

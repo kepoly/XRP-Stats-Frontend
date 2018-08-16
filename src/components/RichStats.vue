@@ -7,29 +7,29 @@
     </div>
 
     <div class="alert alert-primary text-center" v-if="top100 && data && data.totalCoins">
-      <b>XRP owned by the top 100 accounts</b>
-      <span class="large">{{ top100.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} XRP - <b>{{ (top100 / (top100AllXrp ? (data.totalCoins / 1000000) : noAccountsSum) * 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} &percnt;</b></span>
+      <b>CSC owned by the top 100 accounts</b>
+      <span class="large">{{ top100.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} CSC - <b>{{ (top100 / (top100AllXrp ? (data.totalCoins / 1000000) : noAccountsSum) * 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} &percnt;</b></span>
       <b>Calculation:</b>
       <div v-if="top100AllXrp">
-        <code>SUM(Non-escrowed XRP Top 100 accounts) / SUM(Existing XRP on ledger) * 100</code>
+        <code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Existing CSC on ledger) * 100</code>
       </div>
       <div v-if="!top100AllXrp">
-        <code>SUM(Non-escrowed XRP Top 100 accounts) / SUM(Non-escrowed XRP accounts) * 100</code>
+        <code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Non-escrowed CSC accounts) * 100</code>
       </div>
       <i>Note: there are multiple <b>exchange wallets</b> (accounts) in the Top 100. These wallets contain the funds of many individual investors. The actual number will be <b>significantly lower</b>!</i>
       <br />
       <div class="btn-group btn-group-toggle" style="margin-top: 10px;" data-toggle="buttons">
         <div @click="top100AllXrp=false" class="btn btn-xs" :class="{ 'btn-primary': !top100AllXrp, 'btn-light': top100AllXrp }">
-          {{ !top100AllXrp ? '✓' : '' }}  Non-escrowed XRPripple
+          {{ !top100AllXrp ? '✓' : '' }}  Non-escrowed CSCripple
         </div>
         <div @click="top100AllXrp=true" class="btn btn-xs" :class="{ 'btn-primary': top100AllXrp, 'btn-light': !top100AllXrp }">
-          {{ top100AllXrp ? '✓' : '' }} Existing XRP
+          {{ top100AllXrp ? '✓' : '' }} Existing CSC
         </div>
       </div>
     </div>
 
     <p class="text-center text-warning">
-      <b>The numbers in the tables below are <u>not</u> taking escrowed XRP into account.</b>
+      <b>The numbers in the tables below are <u>not</u> taking escrowed CSC into account.</b>
     </p>
 
     <p v-if="Object.keys(data).length === 0" class="alert alert-primary text-center">Loading stats...</p>
@@ -51,7 +51,7 @@
             <th scope="col" class="text-right" width="220">Balance from</th>
             <th scope="col" width="1">-</th>
             <th scope="col" width="220">To</th>
-            <th scope="col" class="text-right">Sum (XRP)</th>
+            <th scope="col" class="text-right">Sum (CSC)</th>
           </tr>
         </thead>
         <tbody>
@@ -60,17 +60,17 @@
               <router-link v-if="l.accounts < 999" :to="'/rich-stats/' + l.accounts + '/' + (lk > 0 ? top[lk - 1].accounts : 0)" class="">{{ l.accounts }}</router-link>
               <span v-if="l.accounts >= 999">{{ l.accounts }}</span>
             </th>
-            <td class="text-right">{{ l.from }} XRP</td>
+            <td class="text-right">{{ l.from }} CSC</td>
             <td></td>
             <td>
               <span v-if="l.i < 1">∞</span>
               <span v-if="l.i > 0">
-                {{ l.to }} XRP
+                {{ l.to }} CSC
               </span>
             </td>
             <td class="text-primary text-right">
-              <router-link v-if="l.accounts < 999" :to="'/rich-stats/' + l.accounts + '/' + (lk > 0 ? top[lk - 1].accounts : 0)" class=""><b>{{ l.balance }}</b> XRP</router-link>
-              <span v-if="l.accounts >= 999"><b>{{ l.balance }}</b> XRP</span>
+              <router-link v-if="l.accounts < 999" :to="'/rich-stats/' + l.accounts + '/' + (lk > 0 ? top[lk - 1].accounts : 0)" class=""><b>{{ l.balance }}</b> CSC</router-link>
+              <span v-if="l.accounts >= 999"><b>{{ l.balance }}</b> CSC</span>
             </td>
           </tr>
         </tbody>
@@ -80,8 +80,8 @@
               {{ noAccountsASum }}
             </th>
             <th scope="row" class="text-right" colspan="100">
-              <span style="font-weight: normal;">In accounts (excl. escrows):</span> <code style="color: black;">{{ noAccountsSum.toLocaleString(undefined) }}</code> XRP<br />
-              <span style="font-weight: normal;">Total coins (ledger):</span> <code style="color: black;">{{ Math.round(data.totalCoins / 1000000).toLocaleString(undefined) }}</code> XRP
+              <span style="font-weight: normal;">In accounts (excl. escrows):</span> <code style="color: black;">{{ noAccountsSum.toLocaleString(undefined) }}</code> CSC<br />
+              <span style="font-weight: normal;">Total coins (ledger):</span> <code style="color: black;">{{ Math.round(data.totalCoins / 1000000).toLocaleString(undefined) }}</code> CSC
             </th>
           </tr>
         </tfoot>
@@ -101,11 +101,11 @@
         <tbody>
           <tr v-for="(v, k) in data.pct" v-bind:key="k">
             <th scope="row" class="text-right">{{ parseFloat(k.substring(3).replace('p', '.')).toLocaleString(undefined) }} &percnt;</th>
-            <td class="text-right text-primary"><b>{{ v.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">XRP</span></td>
+            <td class="text-right text-primary"><b>{{ v.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">CSC</span></td>
             <td class="text-right d-none d-md-table-cell">
               <div v-if="sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt">
                 <small class="text-muted">{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].date[0] }}<br />
-                <b>{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt[0].toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">XRP</span></small>
+                <b>{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt[0].toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">CSC</span></small>
               </div>
             </td>
             <td class="text-center d-none d-sm-table-cell" width="280" style="padding: 0;">
@@ -121,7 +121,7 @@
             <td class="text-left d-none d-md-table-cell">
               <div v-if="sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt">
                 <small class="text-muted">{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].date.slice(-1)[0] }}<br />
-                <b>{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt.slice(-1)[0].toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">XRP</span></small>
+                <b>{{ sparkline[parseFloat(k.substring(3).replace('p', '.')) * 100].balanceEqGt.slice(-1)[0].toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</b> <span class="d-none d-md-inline-block">CSC</span></small>
               </div>
             </td>
             <td class="text-right"></td>
@@ -167,12 +167,14 @@ export default {
     top () {
       var prevStart = 0
       return Object.keys(this.data.has).map((k, i) => {
+        var accounts = this.data.has[k] && this.data.has[k].accounts ? this.data.has[k].accounts : 0
+        var balance = this.data.has[k] && this.data.has[k].balanceSum ? Math.round(this.data.has[k].balanceSum).toLocaleString(undefined) : 0
         var r = {
           i: i,
-          accounts: this.data.has[k].accounts,
+          accounts: accounts,
           from: parseInt(k.substring(3)).toLocaleString(undefined),
           to: prevStart.toLocaleString(undefined),
-          balance: Math.round(this.data.has[k].balanceSum).toLocaleString(undefined)
+          balance: balance
         }
         prevStart = parseInt(k.substring(3)) - 1
         return r
@@ -180,14 +182,19 @@ export default {
     },
     noAccountsSum () {
       return Math.round(Object.keys(this.data.has).map((r) => {
-        return this.data.has[r].balanceSum
+        console.log(this.data.has[r])
+        if (this.data.has[r]) {
+          return this.data.has[r] && this.data.has[r].balanceSum ? this.data.has[r].balanceSum : 0
+        } else {
+          return 0
+        }
       }).reduce((a, b) => {
         return a + b
       }, 0))
     },
     noAccountsASum () {
       return Math.round(Object.keys(this.data.has).map((r) => {
-        return this.data.has[r].accounts
+        return this.data.has[r] && this.data.has[r].accounts ? this.data.has[r].accounts : 0
       }).reduce((a, b) => {
         return a + b
       }, 0)).toLocaleString(undefined)
@@ -211,14 +218,14 @@ export default {
     if (this.location.hash === '') {
       this.location.hash = '#range'
     }
-    window.fetch('https://ledger.exposed/api/richlist').then((r) => {
+    window.fetch('http://localhost:4000/api/richlist').then((r) => {
       return r.json()
     }).then((r) => {
       this.data = r
     }).catch((e) => {
       console.log(e)
     })
-    window.fetch('https://ledger.exposed/api/wallet-toplist/100/0').then((r) => {
+    window.fetch('http://localhost:4000/api/wallet-toplist/100/0').then((r) => {
       return r.json()
     }).then((r) => {
       this.top100 = r.map(p => {
@@ -229,7 +236,7 @@ export default {
     }).catch((e) => {
       console.log(e)
     })
-    window.fetch('https://ledger.exposed/api/richlist-spark').then((r) => {
+    window.fetch('http://localhost:4000/api/richlist-spark').then((r) => {
       return r.json()
     }).then((r) => {
       this.sparkline = r
