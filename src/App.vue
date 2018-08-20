@@ -3,7 +3,7 @@
     <main role="main">
       <div class="d-md-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <router-link tag="h5" class="my-0 mr-md-auto font-weight-normal logo" to="/">
-          <span class="logo">x</span> XRP Stats
+          <span class="logo"></span> CSC Stats
         </router-link>
         <nav class="d-inline-block my-2 my-md-0 mr-md-3">
           <router-link to="/rich-index" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Richlist Index</router-link>
@@ -31,12 +31,7 @@
         <small>
           <span class="text-muted">By <a href="https://twitter.com/WietseWind" target="_blank">@WietseWind</a></span>
           &dash;
-          <span class="text-muted">Check the XRPTipBot: <a href="https://xrptipbot.com" target="_blank">xrptipbot.com</a></span>
-          &dash;
-          Github:
-          <span class="text-muted"><a href="https://github.com/WietseWind/XRP-Stats-Frontend" target="_blank">Frontend</a></span>
-          &amp;
-          <span class="text-muted"><a href="https://github.com/WietseWind/XRP-Ledger-to-MongoDB" target="_blank">Backend</a></span>
+          <span class="text-muted">Ported to CasinoCoin By: <a href="https://twitter.com/kepoly" target="_blank">@kepoly</a></span>
         </small>
       </div>
     </footer>
@@ -126,7 +121,7 @@ body {
 }
 
 .logo {
-  // background-image: url('assets/logo.png');
+  background-image: url('assets/logo.png');
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
@@ -134,7 +129,7 @@ body {
   padding-left: 43px;
   cursor: pointer;
   span {
-    font-family: 'r1ppled';
+    //font-family: 'r1ppled';
     font-size: 4em;
     display: block;
     position: absolute;

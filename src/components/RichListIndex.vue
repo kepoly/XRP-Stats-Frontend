@@ -39,24 +39,24 @@
         <br />
         <h1>
           <span v-if="results.accounts.length > 0">You are</span>
-          <span v-if="results.accounts.length < 1">{{ parseInt(results.query).toLocaleString(undefined) }} XRP is </span>
+          <span v-if="results.accounts.length < 1">{{ parseInt(results.query).toLocaleString(undefined) }} CSC is </span>
           <b>#{{ results.gt.count + 1 }}</b> 🎉
         </h1>
         <b class="d-block d-sm-none" style="padding-bottom: 10px;">This means you are in the top ~{{ Math.ceil(results.gt.percentage * 100 * 100) / 100 }}&percnt;</b>
-        There are <b>{{ results.gt.count }}</b> account(s) with <u>more</u> XRP<span v-if="results.eq.count > 1">,
-          <b>{{ results.eq.count - 1 }}</b> account(s) with the <u>exact same</u> amount of XRP</span>
+        There are <b>{{ results.gt.count }}</b> account(s) with <u>more</u> CSC<span v-if="results.eq.count > 1">,
+          <b>{{ results.eq.count - 1 }}</b> account(s) with the <u>exact same</u> amount of CSC</span>
         and
-        <b>{{ results.lt.count }}</b> account(s) with <u>less</u> XRP.
+        <b>{{ results.lt.count }}</b> account(s) with <u>less</u> CSC.
         <br />
         <hr />
-        <!-- When looking at the total amount of XRP in account: -->
+        <!-- When looking at the total amount of CSC in account: -->
         <!-- <br /> -->
-        <b>{{ results.lt.amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} XRP</b>
+        <b>{{ results.lt.amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} CSC</b>
         <small class="text-primary">({{ parseFloat((results.lt.amountpct * 100).toFixed(6)).toLocaleString(undefined) }}&percnt;)</small>
-        is in accounts with <u>less</u> XRP and <br />
-        <b>{{ results.gt.amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} XRP</b>
+        is in accounts with <u>less</u> CSC and <br />
+        <b>{{ results.gt.amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} CSC</b>
         <small class="text-primary">({{ parseFloat((results.gt.amountpct * 100).toFixed(6)).toLocaleString(undefined) }}&percnt;)</small>
-        is in accounts with <u>more</u> XRP.
+        is in accounts with <u>more</u> CSC.
         <br />
         <div class="progress" style="height: 17px; margin-top: 10px; margin-bottom: 12px;">
           <div class="progress-bar text-center bg-warning text-dark" role="progressbar" style="width: 0%; max-width: 90%; min-width: 10%;" :style="'width: ' + Math.ceil(results.lt.amountpct * 100) + '%'"><b class="d-none d-sm-block">&nbsp;&nbsp;{{ parseFloat((results.lt.amountpct * 100).toFixed(6)).toLocaleString(undefined) }}&percnt;</b></div>
@@ -83,10 +83,7 @@
         <br />&nbsp;
       </div>
       <div v-show="!requesting && results.gt" class="donate">
-        <div class="text-center donate">
-          <span class="text-muted">Feel like sending a sip my way 🍺?</span><br />
-          <a amount="0.345" size="275" to="WietseWind" network="twitter" href="https://www.xrptipbot.com" target="_blank"></a>
-        </div>
+
       </div>
     </div>
   </div>
@@ -176,7 +173,7 @@ export default {
           clearInterval(interval)
         }
       }, 200)
-      if (this.account.trim().match(/^r[a-zA-Z0-9, ]{10,}$/) || this.account.trim().match(/^[0-9]+$/)) {
+      if (this.account.trim().match(/^c[a-zA-Z0-9, ]{10,}$/) || this.account.trim().match(/^[0-9]+$/)) {
         this.requesting = true
         window.fetch('http://localhost:4000/api/richlist-index/' + this.account).then((r) => {
           return r.json()

@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">XRP Stats</h1>
+      <h1 class="display-4">CSC Stats</h1>
       <p class="lead">Because everything on the ledger is public information 🎉</p>
     </div>
 

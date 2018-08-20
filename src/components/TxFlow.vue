@@ -2,11 +2,11 @@
   <div class="hello">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Account Transaction Flow</h1>
-      <p class="lead text-muted">Most recent XRP only <code>Payment</code> transactions</p>
+      <p class="lead text-muted">Most recent CSC only <code>Payment</code> transactions</p>
     </div>
 
     <div v-if="!poolReady">
-      <p class="alert alert-primary text-center">Connecting to Ripple (XRPL) Websocket server...</p>
+      <p class="alert alert-primary text-center">Connecting to CasinoCoin (CSCL) Websocket server...</p>
     </div>
     <div v-if="poolReady">
       <p class="text-warning text-center">
@@ -56,8 +56,8 @@
             <tr v-for="(tx, index) in results" v-bind:key="tx.tx.hash" v-if="index < chartData.records && tx.meta.delivered_amount !== '0'">
               <td><code><small>{{ m(new Date((tx.tx.date + 946684800) * 1000)) }}</small></code></td>
               <td class="text-right">
-                <b><a :href="'https://xrpcharts.ripple.com/#/transactions/' + tx.tx.hash" target="_blank">{{ (parseInt(tx.meta.delivered_amount) / 1000000).toFixed(6) }}</a></b>
-                <span class="default-pointer" :title="'High fee! ' + (parseInt(tx.tx.Fee) / 1000000).toFixed(6) + ' XRP!'" v-if="(parseInt(tx.tx.Fee) / 1000000) >= 1">⚠</span>
+                <b><a :href="'https://explorer.casinocoin.org/tx/' + tx.tx.hash" target="_blank">{{ (parseInt(tx.meta.delivered_amount) / 100000000).toFixed(8) }}</a></b>
+                <span class="default-pointer" :title="'High fee! ' + (parseInt(tx.tx.Fee) / 100000000).toFixed(8) + ' CSC!'" v-if="(parseInt(tx.tx.Fee) / 100000000) >= 1">⚠</span>
               </td>
               <td class="text-center"><code><small>
                 <router-link :to="'/tx-flow/' + tx.tx.Account" v-if="account !== tx.tx.Account" class="text-primary">{{ tx.tx.Account }}</router-link>
@@ -116,7 +116,7 @@ export default {
     }
     if (typeof window.RippledWsClientPool === 'undefined') {
       let pool = new RippledWsClientPool({})
-      pool.addServer('wss://s2.ripple.com')
+      pool.addServer('ws://167.99.229.4:4443')
       window.RippledWsClientPool = pool
     } else {
       if (window.RippledWsClientPool.getConnections().filter(c => {

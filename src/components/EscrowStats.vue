@@ -15,7 +15,7 @@
         <button class="btn" :class="{ 'btn-primary': show === 'finish', 'btn-outline-primary': show !== 'finish' }" @click="show='finish'">Has Finish</button>
         <button class="btn" :class="{ 'btn-primary': show === 'cancel', 'btn-outline-primary': show !== 'cancel' }" @click="show='cancel'">Has Cancel</button>
         <button class="btn" :class="{ 'btn-primary': show === 'condition', 'btn-outline-primary': show !== 'condition' }" @click="show='condition'">Has Condition</button>
-        <button class="btn" :class="{ 'btn-primary': show === 'gt1000', 'btn-outline-primary': show !== 'gt1000' }" @click="show='gt1000'">&gt; 1000 XRP</button>
+        <button class="btn" :class="{ 'btn-primary': show === 'gt1000', 'btn-outline-primary': show !== 'gt1000' }" @click="show='gt1000'">&gt; 1000 CSC</button>
       </div>
       <br /><br />
       <small><b>Sort</b></small>
@@ -35,7 +35,7 @@
         <div class="card mb-4 box-shadow">
           <div class="card-body">
             <div class="card-text text-center">
-              <b>{{ (Math.round(element.Amount * 1000000) / 1000000).toLocaleString(undefined, { maximumFractionDigits: 6 }) }}</b> XRP
+              <b>{{ (Math.round(element.Amount * 1000000) / 1000000).toLocaleString(undefined, { maximumFractionDigits: 6 }) }}</b> CSC
               <br />
               <small><b><code>{{ element.Account }}</code></b></small>
               <br />
