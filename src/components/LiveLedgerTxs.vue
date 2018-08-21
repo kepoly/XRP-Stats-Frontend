@@ -6,7 +6,7 @@
     </div>
 
     <div v-if="!poolReady">
-      <p class="alert alert-primary text-center">Connecting to Ripple (CSCL) Websocket server...</p>
+      <p class="alert alert-primary text-center">Connecting to CasinoCoin (CSCL) Websocket server...</p>
     </div>
     <div v-if="poolReady && sortedTxs.length < 1">
       <p class="alert alert-warning text-center">Connected, Waiting for transactions...</p>
@@ -26,7 +26,7 @@
           <tbody>
             <tr v-for="x in sortedTxs" v-bind:key="x">
               <td class="text-right"><small class="text-muted">{{ txs[x].__count }}</small></td>
-              <td><code class="text-primary"><b><a :href="'https://bithomp.com/explorer/' + x" target="_blank">{{ x }}</a></b></code></td>
+              <td><code class="text-primary"><b><a :href="'https://explorer.casinocoin.org/address/' + x" target="_blank">{{ x }}</a></b></code></td>
               <td class="text-center" v-for="t in sortedTxTypes" v-bind:key="t">
                 {{ txs[x][t] }}
               </td>
@@ -51,15 +51,14 @@ export default {
       types: {},
       poolReady: false,
       gotTxs: false,
-      minTxs: 10
+      minTxs: 1
     }
   },
   mounted () {
     if (typeof window.RippledWsClientPoolLive === 'undefined') {
       let pool = new RippledWsClientPool({})
-      pool.addServer('wss://s1.ripple.com')
-      pool.addServer('wss://kyte.peerisland.com')
-      pool.addServer('wss://rippled-dev.xrpayments.co')
+      pool.addServer('ws://167.99.229.4:4443')
+      pool.addServer('wss://ws01.casinocoin.org:4443')
       window.RippledWsClientPoolLive = pool
     } else {
       if (window.RippledWsClientPoolLive.getConnections().filter(c => {

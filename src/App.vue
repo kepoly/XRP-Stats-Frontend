@@ -8,18 +8,18 @@
         <nav class="d-inline-block my-2 my-md-0 mr-md-3">
           <router-link to="/rich-index" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Richlist Index</router-link>
         </nav>
-        <nav class="d-none d-sm-inline-block my-2 my-md-0 mr-md-3">
-          <router-link to="/tx-flow" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Tx Flow</router-link>
-        </nav>
         <nav class="d-inline-block my-2 my-md-0 mr-md-3">
           <router-link to="/rich-stats" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Richlist Stats</router-link>
         </nav>
         <nav class="d-none d-sm-inline-block my-2 my-md-0 mr-md-3">
+          <router-link to="/tx-flow" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Tx Flow</router-link>
+        </nav>
+        <nav class="d-none d-sm-inline-block my-2 my-md-0 mr-md-3">
           <router-link to="/live-ledger-txs" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Live Tx</router-link>
         </nav>
-        <nav class="d-inline-block my-2 my-md-0 mr-md-3">
-          <router-link to="/escrow-stats" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Escrows</router-link>
-        </nav>
+        <!--<nav class="d-inline-block my-2 my-md-0 mr-md-3">-->
+          <!--<router-link to="/escrow-stats" class="p-2 routerlink btn" active-class="btn btn-outline-primary">Escrows</router-link>-->
+        <!--</nav>-->
       </div>
       <div class="container">
         <router-view/>

@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">CSC Stats</h1>
-      <p class="lead">Because everything on the ledger is public information 🎉</p>
+      <p class="lead">Because everything on the ledger is public information</p>
     </div>
 
     <div class="card-deck mb-3 text-center">
@@ -15,24 +15,24 @@
           <router-link to="/rich-index" class="btn btn-md btn-block btn-outline-primary">Lookup</router-link>
         </div>
       </div>
-      <div class="card mb-4 box-shadow">
+      <div class="card mb- box-shadow">
         <div class="card-header">
           <h4 class="my-0 font-weight-normal">Richlist stats</h4>
         </div>
         <div class="card-body">
-          <p>You wish 😉</p>
+          <p>You wish!</p>
           <router-link to="/rich-stats" class="btn btn-md btn-block btn-outline-primary">Show me</router-link>
         </div>
       </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Escrow stats</h4>
-        </div>
-        <div class="card-body">
-          <p>One day...🔒</p>
-          <router-link to="/escrow-stats" class="btn btn-md btn-block btn-outline-primary">Filter it...</router-link>
-        </div>
-      </div>
+      <!--<div class="card mb-4 box-shadow">-->
+        <!--<div class="card-header">-->
+          <!--<h4 class="my-0 font-weight-normal">Escrow stats</h4>-->
+        <!--</div>-->
+        <!--<div class="card-body">-->
+          <!--<p>One day...🔒</p>-->
+          <!--<router-link to="/escrow-stats" class="btn btn-md btn-block btn-outline-primary">Filter it...</router-link>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
 
     <div class="card box-shadow">
@@ -41,13 +41,7 @@
         <br />
         <small>
           Accounts (250~400MB): <a href="http://localhost:4000/download/latest_account_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_account_data.json">JSON</a>
-          &dash;
-          Escrows (&lt;1MB): <a href="http://localhost:4000/download/latest_escrow_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_escrow_data.json">JSON</a>
         </small>
-      </div>
-      <div class="text-center donate">
-        <span class="text-muted">Feel like sending a sip my way 🍺?</span><br />
-        <a amount="0.5" size="275" to="WietseWind" network="twitter" href="https://www.xrptipbot.com" target="_blank"></a>
       </div>
     </div>
   </div>
