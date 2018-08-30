@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Live CSCL Transactions</h1>
-      <p class="lead text-muted">Watch the most recent activity on the XRP ledger<br /><small><small class="text-primary">(Only accounts with &gt; 10 transactions are displayed)</small></small></p>
+      <p class="lead text-muted">Watch the most recent activity on the CSC ledger<br /><small><small class="text-primary">(Only accounts with &gt; 10 transactions are displayed)</small></small></p>
     </div>
 
     <div v-if="!poolReady">
