@@ -20,7 +20,7 @@
       <br />
       <div class="btn-group btn-group-toggle" style="margin-top: 10px;" data-toggle="buttons">
         <div @click="top100AllXrp=false" class="btn btn-xs" :class="{ 'btn-primary': !top100AllXrp, 'btn-light': top100AllXrp }">
-          {{ !top100AllXrp ? '✓' : '' }}  Non-escrowed CSCripple
+          {{ !top100AllXrp ? '✓' : '' }}  Non-escrowed CSC
         </div>
         <div @click="top100AllXrp=true" class="btn btn-xs" :class="{ 'btn-primary': top100AllXrp, 'btn-light': !top100AllXrp }">
           {{ top100AllXrp ? '✓' : '' }} Existing CSC
@@ -81,7 +81,7 @@
             </th>
             <th scope="row" class="text-right" colspan="100">
               <span style="font-weight: normal;">In accounts (excl. escrows):</span> <code style="color: black;">{{ noAccountsSum.toLocaleString(undefined) }}</code> CSC<br />
-              <span style="font-weight: normal;">Total coins (ledger):</span> <code style="color: black;">{{ Math.round(data.totalCoins / 1000000).toLocaleString(undefined) }}</code> CSC
+              <span style="font-weight: normal;">Total coins (ledger):</span> <code style="color: black;">{{ Math.round(data.totalCoins / 100000000).toLocaleString(undefined) }}</code> CSC
             </th>
           </tr>
         </tfoot>
@@ -173,7 +173,6 @@ export default {
     },
     noAccountsSum () {
       return Math.round(Object.keys(this.data.has).map((r) => {
-        console.log(this.data.has[r])
         if (this.data.has[r]) {
           return this.data.has[r] && this.data.has[r].balanceSum ? this.data.has[r].balanceSum : 0
         } else {

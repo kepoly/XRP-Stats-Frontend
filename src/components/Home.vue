@@ -15,7 +15,7 @@
           <router-link to="/rich-index" class="btn btn-md btn-block btn-outline-primary">Lookup</router-link>
         </div>
       </div>
-      <div class="card mb- box-shadow">
+      <div class="card mb-4 box-shadow">
         <div class="card-header">
           <h4 class="my-0 font-weight-normal">Richlist stats</h4>
         </div>
@@ -35,15 +35,15 @@
       <!--</div>-->
     </div>
 
-    <div class="card box-shadow">
-      <div class="card-body text-center text-muted">
-        <small>If you want to analyze the data yourself: every ~15 minutes the entire ledger export is saved for you to download 🎉</small>
-        <br />
-        <small>
-          Accounts (250~400MB): <a href="http://localhost:4000/download/latest_account_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_account_data.json">JSON</a>
-        </small>
-      </div>
-    </div>
+    <!--<div class="card box-shadow">-->
+      <!--<div class="card-body text-center text-muted">-->
+        <!--<small>If you want to analyze the data yourself: every ~15 minutes the entire ledger export is saved for you to download 🎉</small>-->
+        <!--<br />-->
+        <!--<small>-->
+          <!--Accounts (250~400MB): <a href="http://localhost:4000/download/latest_account_data.csv">CSV</a> / <a href="http://localhost:4000/download/latest_account_data.json">JSON</a>-->
+        <!--</small>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 
