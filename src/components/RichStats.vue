@@ -9,28 +9,28 @@
     <div class="alert alert-primary text-center" v-if="top100 && data && data.totalCoins">
       <b>CSC owned by the top 100 accounts</b>
       <span class="large">{{ top100.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }} CSC - <b>{{ (top100 / (top100AllXrp ? (data.totalCoins / 1000000) : noAccountsSum) * 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} &percnt;</b></span>
-      <b>Calculation:</b>
-      <div v-if="top100AllXrp">
-        <code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Existing CSC on ledger) * 100</code>
-      </div>
-      <div v-if="!top100AllXrp">
-        <code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Non-escrowed CSC accounts) * 100</code>
-      </div>
+      <!--<b>Calculation:</b>-->
+      <!--<div v-if="top100AllXrp">-->
+        <!--<code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Existing CSC on ledger) * 100</code>-->
+      <!--</div>-->
+      <!--<div v-if="!top100AllXrp">-->
+        <!--<code>SUM(Non-escrowed CSC Top 100 accounts) / SUM(Non-escrowed CSC accounts) * 100</code>-->
+      <!--</div>-->
       <i>Note: there are multiple <b>exchange wallets</b> (accounts) in the Top 100. These wallets contain the funds of many individual investors. The actual number will be <b>significantly lower</b>!</i>
       <br />
       <div class="btn-group btn-group-toggle" style="margin-top: 10px;" data-toggle="buttons">
-        <div @click="top100AllXrp=false" class="btn btn-xs" :class="{ 'btn-primary': !top100AllXrp, 'btn-light': top100AllXrp }">
-          {{ !top100AllXrp ? '✓' : '' }}  Non-escrowed CSC
-        </div>
-        <div @click="top100AllXrp=true" class="btn btn-xs" :class="{ 'btn-primary': top100AllXrp, 'btn-light': !top100AllXrp }">
-          {{ top100AllXrp ? '✓' : '' }} Existing CSC
-        </div>
+        <!--<div @click="top100AllXrp=false" class="btn btn-xs" :class="{ 'btn-primary': !top100AllXrp, 'btn-light': top100AllXrp }">-->
+          <!--{{ !top100AllXrp ? '✓' : '' }}  Non-escrowed CSC-->
+        <!--</div>-->
+        <!--<div @click="top100AllXrp=true" class="btn btn-xs" :class="{ 'btn-primary': top100AllXrp, 'btn-light': !top100AllXrp }">-->
+          <!--{{ top100AllXrp ? '✓' : '' }} Existing CSC-->
+        <!--</div>-->
       </div>
     </div>
 
-    <p class="text-center text-warning">
-      <b>The numbers in the tables below are <u>not</u> taking escrowed CSC into account.</b>
-    </p>
+    <!--<p class="text-center text-warning">-->
+      <!--<b>The numbers in the tables below are <u>not</u> taking escrowed CSC into account.</b>-->
+    <!--</p>-->
 
     <p v-if="Object.keys(data).length === 0" class="alert alert-primary text-center">Loading stats...</p>
 
@@ -38,7 +38,7 @@
       <nav>
         <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
           <a class="nav-item nav-link" @click="location.hash = '#range'" :class="{ 'active bold': location.hash === '#range' }" href="#range">By # of accounts (balance range)</a>
-          <a class="nav-item nav-link" @click="location.hash = '#percentage'" :class="{ 'active bold': location.hash === '#percentage' }" href="#percentage">By percentage of accounts</a>
+          <!--<a class="nav-item nav-link" @click="location.hash = '#percentage'" :class="{ 'active bold': location.hash === '#percentage' }" href="#percentage">By percentage of accounts</a>-->
         </div>
       </nav>
 
